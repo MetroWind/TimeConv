@@ -13,6 +13,8 @@
 		DA9B7E63150A832F00831928 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DA9B7E61150A832F00831928 /* Credits.rtf */; };
 		DA9B7E66150A832F00831928 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7E65150A832F00831928 /* AppDelegate.m */; };
 		DA9B7E69150A832F00831928 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA9B7E67150A832F00831928 /* MainMenu.xib */; };
+		DA9B7E74150A86FF00831928 /* TimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7E73150A86FF00831928 /* TimeController.m */; };
+		DA9B7E77150A88DE00831928 /* TimeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7E76150A88DE00831928 /* TimeConverter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +23,18 @@
 		DA9B7E55150A832F00831928 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DA9B7E56150A832F00831928 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DA9B7E57150A832F00831928 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DA9B7E5A150A832F00831928 /* TimeConv-Info.plist */ = {isa = PBXFileReference; path = "TimeConv-Info.plist"; sourceTree = "<group>"; };
+		DA9B7E5A150A832F00831928 /* TimeConv-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeConv-Info.plist"; sourceTree = "<group>"; };
 		DA9B7E5C150A832F00831928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA9B7E5E150A832F00831928 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA9B7E60150A832F00831928 /* TimeConv-Prefix.pch */ = {isa = PBXFileReference; path = "TimeConv-Prefix.pch"; sourceTree = "<group>"; };
+		DA9B7E60150A832F00831928 /* TimeConv-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeConv-Prefix.pch"; sourceTree = "<group>"; };
 		DA9B7E62150A832F00831928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		DA9B7E64150A832F00831928 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA9B7E64150A832F00831928 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA9B7E65150A832F00831928 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA9B7E68150A832F00831928 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DA9B7E72150A86FF00831928 /* TimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeController.h; sourceTree = "<group>"; };
+		DA9B7E73150A86FF00831928 /* TimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeController.m; sourceTree = "<group>"; };
+		DA9B7E75150A88DE00831928 /* TimeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeConverter.h; sourceTree = "<group>"; };
+		DA9B7E76150A88DE00831928 /* TimeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeConverter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				DA9B7E65150A832F00831928 /* AppDelegate.m */,
 				DA9B7E67150A832F00831928 /* MainMenu.xib */,
 				DA9B7E59150A832F00831928 /* Supporting Files */,
+				DA9B7E72150A86FF00831928 /* TimeController.h */,
+				DA9B7E73150A86FF00831928 /* TimeController.m */,
+				DA9B7E75150A88DE00831928 /* TimeConverter.h */,
+				DA9B7E76150A88DE00831928 /* TimeConverter.m */,
 			);
 			path = TimeConv;
 			sourceTree = "<group>";
@@ -168,6 +178,8 @@
 			files = (
 				DA9B7E5F150A832F00831928 /* main.m in Sources */,
 				DA9B7E66150A832F00831928 /* AppDelegate.m in Sources */,
+				DA9B7E74150A86FF00831928 /* TimeController.m in Sources */,
+				DA9B7E77150A88DE00831928 /* TimeConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

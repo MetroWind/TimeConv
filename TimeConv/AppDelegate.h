@@ -11,5 +11,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSDatePicker *SrcTimeView;
+@property (weak) IBOutlet NSComboBox *SrcTimeZoneView;
 
 @end
