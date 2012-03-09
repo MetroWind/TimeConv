@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA9B7E53150A832F00831928 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B7E52150A832F00831928 /* Cocoa.framework */; };
+		DA9B7E5D150A832F00831928 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA9B7E5B150A832F00831928 /* InfoPlist.strings */; };
+		DA9B7E5F150A832F00831928 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7E5E150A832F00831928 /* main.m */; };
+		DA9B7E63150A832F00831928 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DA9B7E61150A832F00831928 /* Credits.rtf */; };
+		DA9B7E66150A832F00831928 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7E65150A832F00831928 /* AppDelegate.m */; };
+		DA9B7E69150A832F00831928 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA9B7E67150A832F00831928 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DA9B7E4E150A832F00831928 /* TimeConv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeConv.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9B7E52150A832F00831928 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DA9B7E55150A832F00831928 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DA9B7E56150A832F00831928 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DA9B7E57150A832F00831928 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DA9B7E5A150A832F00831928 /* TimeConv-Info.plist */ = {isa = PBXFileReference; path = "TimeConv-Info.plist"; sourceTree = "<group>"; };
+		DA9B7E5C150A832F00831928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA9B7E5E150A832F00831928 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA9B7E60150A832F00831928 /* TimeConv-Prefix.pch */ = {isa = PBXFileReference; path = "TimeConv-Prefix.pch"; sourceTree = "<group>"; };
+		DA9B7E62150A832F00831928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DA9B7E64150A832F00831928 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA9B7E65150A832F00831928 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DA9B7E68150A832F00831928 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA9B7E4B150A832F00831928 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA9B7E53150A832F00831928 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA9B7E43150A832F00831928 = {
+			isa = PBXGroup;
+			children = (
+				DA9B7E58150A832F00831928 /* TimeConv */,
+				DA9B7E51150A832F00831928 /* Frameworks */,
+				DA9B7E4F150A832F00831928 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA9B7E4F150A832F00831928 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B7E4E150A832F00831928 /* TimeConv.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA9B7E51150A832F00831928 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B7E52150A832F00831928 /* Cocoa.framework */,
+				DA9B7E54150A832F00831928 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA9B7E54150A832F00831928 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B7E55150A832F00831928 /* AppKit.framework */,
+				DA9B7E56150A832F00831928 /* CoreData.framework */,
+				DA9B7E57150A832F00831928 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DA9B7E58150A832F00831928 /* TimeConv */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B7E64150A832F00831928 /* AppDelegate.h */,
+				DA9B7E65150A832F00831928 /* AppDelegate.m */,
+				DA9B7E67150A832F00831928 /* MainMenu.xib */,
+				DA9B7E59150A832F00831928 /* Supporting Files */,
+			);
+			path = TimeConv;
+			sourceTree = "<group>";
+		};
+		DA9B7E59150A832F00831928 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B7E5A150A832F00831928 /* TimeConv-Info.plist */,
+				DA9B7E5B150A832F00831928 /* InfoPlist.strings */,
+				DA9B7E5E150A832F00831928 /* main.m */,
+				DA9B7E60150A832F00831928 /* TimeConv-Prefix.pch */,
+				DA9B7E61150A832F00831928 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA9B7E4D150A832F00831928 /* TimeConv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA9B7E6C150A832F00831928 /* Build configuration list for PBXNativeTarget "TimeConv" */;
+			buildPhases = (
+				DA9B7E4A150A832F00831928 /* Sources */,
+				DA9B7E4B150A832F00831928 /* Frameworks */,
+				DA9B7E4C150A832F00831928 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeConv;
+			productName = TimeConv;
+			productReference = DA9B7E4E150A832F00831928 /* TimeConv.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA9B7E45150A832F00831928 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Home;
+			};
+			buildConfigurationList = DA9B7E48150A832F00831928 /* Build configuration list for PBXProject "TimeConv" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DA9B7E43150A832F00831928;
+			productRefGroup = DA9B7E4F150A832F00831928 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA9B7E4D150A832F00831928 /* TimeConv */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA9B7E4C150A832F00831928 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA9B7E5D150A832F00831928 /* InfoPlist.strings in Resources */,
+				DA9B7E63150A832F00831928 /* Credits.rtf in Resources */,
+				DA9B7E69150A832F00831928 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA9B7E4A150A832F00831928 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA9B7E5F150A832F00831928 /* main.m in Sources */,
+				DA9B7E66150A832F00831928 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA9B7E5B150A832F00831928 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA9B7E5C150A832F00831928 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DA9B7E61150A832F00831928 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA9B7E62150A832F00831928 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		DA9B7E67150A832F00831928 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA9B7E68150A832F00831928 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA9B7E6A150A832F00831928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DA9B7E6B150A832F00831928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DA9B7E6D150A832F00831928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TimeConv/TimeConv-Prefix.pch";
+				INFOPLIST_FILE = "TimeConv/TimeConv-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DA9B7E6E150A832F00831928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TimeConv/TimeConv-Prefix.pch";
+				INFOPLIST_FILE = "TimeConv/TimeConv-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA9B7E48150A832F00831928 /* Build configuration list for PBXProject "TimeConv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA9B7E6A150A832F00831928 /* Debug */,
+				DA9B7E6B150A832F00831928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA9B7E6C150A832F00831928 /* Build configuration list for PBXNativeTarget "TimeConv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA9B7E6D150A832F00831928 /* Debug */,
+				DA9B7E6E150A832F00831928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA9B7E45150A832F00831928 /* Project object */;
+}
