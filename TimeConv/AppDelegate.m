@@ -57,11 +57,9 @@
 
     [SrcTimeZoneView setDelegate: TimeControl];
     [DestTimeZoneView setDelegate: TimeControl];
-// TODO: get time zone working.  Move timer to controller.
-    
     
     [TimeConv updateTimeSrcView];
-    [TimeConv startUpdating];
+    [TimeControl startUpdating];
 
     NSLog(@"Application initialized.");
 }

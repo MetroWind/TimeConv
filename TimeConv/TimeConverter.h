@@ -32,5 +32,4 @@
 - (void) updateZoneDestView;
 
 - (void) updateViews;
-- (void) startUpdating;
 @end

@@ -17,4 +17,5 @@
 - (void) shortSrcZone: (bool) shortp;
 - (void) shortDestZone: (bool) shortp;
 
+- (void) startUpdating;
 @end

@@ -17,6 +17,8 @@
     id SrcZoneView;
     id DestTimeView;
     id DestZoneView;
+    
+    NSTimer* UpdateTimer;
 }
 - (id)init
 {
@@ -83,5 +85,16 @@
 //{
 //    return FALSE;
 //}
+
+- (void) startUpdating
+{
+    UpdateTimer =
+    [NSTimer scheduledTimerWithTimeInterval: 0.2
+                                     target: TimeConv
+                                   selector: @selector(updateViews)
+                                   userInfo: [NSDictionary dictionaryWithObject:[NSDate date] forKey:@"StartDate"]
+                                    repeats: YES];
+    NSLog(@"Timer fired.");
+}
 
 @end
