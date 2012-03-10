@@ -23,10 +23,22 @@
 @synthesize DestTimeView;
 @synthesize DestTimeZoneView;
 @synthesize BtnDestZoneShort;
+@synthesize Seperator;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    NSImage* BGImage = [[NSImage alloc] initWithContentsOfFile:
+                        [[NSBundle mainBundle] pathForResource: @"bg" ofType: @"png"]];
+    NSImage* ImageSep = [[NSImage alloc] initWithContentsOfFile:
+                        [[NSBundle mainBundle] pathForResource: @"seperator" ofType: @"png"]];
+
     // Insert code here to initialize your application
+    [[window contentView] setWantsLayer:YES];
+    [[window contentView] layer].contents = BGImage;
+    
+    [Seperator setImageScaling: NSScaleProportionally];
+    [Seperator setImage: ImageSep];
+        
     TimeControl = [[TimeController alloc] init];
     TimeConv = [[TimeConverter alloc] init];
     

@@ -17,6 +17,7 @@
 @property (weak) IBOutlet NSDatePicker *DestTimeView;
 @property (weak) IBOutlet NSComboBox *DestTimeZoneView;
 @property (weak) IBOutlet NSButton *BtnDestZoneShort;
+@property (weak) IBOutlet NSImageView *Seperator;
 
 - (IBAction)onBtnSrcZoneShortClick:(id)sender;
 - (IBAction)onBtnDestZoneShortClick:(id)sender;
