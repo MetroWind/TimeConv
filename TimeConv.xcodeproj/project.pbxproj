@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA034885150B0F3D00168B58 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA034884150B0F3D00168B58 /* bg.png */; };
 		DA034889150B130D00168B58 /* seperator.png in Resources */ = {isa = PBXBuildFile; fileRef = DA034888150B130D00168B58 /* seperator.png */; };
+		DA2FCB33150BC98B009617E2 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = DA2FCB32150BC98B009617E2 /* icon.icns */; };
 		DA9B7E53150A832F00831928 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B7E52150A832F00831928 /* Cocoa.framework */; };
 		DA9B7E5D150A832F00831928 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA9B7E5B150A832F00831928 /* InfoPlist.strings */; };
 		DA9B7E5F150A832F00831928 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7E5E150A832F00831928 /* main.m */; };
@@ -17,13 +18,13 @@
 		DA9B7E69150A832F00831928 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA9B7E67150A832F00831928 /* MainMenu.xib */; };
 		DA9B7E74150A86FF00831928 /* TimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7E73150A86FF00831928 /* TimeController.m */; };
 		DA9B7E77150A88DE00831928 /* TimeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7E76150A88DE00831928 /* TimeConverter.m */; };
-		DAA36644150B31CC002DFA0A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA36643150B31CC002DFA0A /* icon.png */; };
 		DAC08262150B265000D30F30 /* shorten.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC08261150B265000D30F30 /* shorten.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA034884150B0F3D00168B58 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Resources/bg.png; sourceTree = SOURCE_ROOT; };
 		DA034888150B130D00168B58 /* seperator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seperator.png; path = Resources/seperator.png; sourceTree = SOURCE_ROOT; };
+		DA2FCB32150BC98B009617E2 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		DA9B7E4E150A832F00831928 /* TimeConv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeConv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9B7E52150A832F00831928 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA9B7E55150A832F00831928 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -41,7 +42,6 @@
 		DA9B7E73150A86FF00831928 /* TimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeController.m; sourceTree = "<group>"; };
 		DA9B7E75150A88DE00831928 /* TimeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeConverter.h; sourceTree = "<group>"; };
 		DA9B7E76150A88DE00831928 /* TimeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeConverter.m; sourceTree = "<group>"; };
-		DAA36643150B31CC002DFA0A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		DAC08261150B265000D30F30 /* shorten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shorten.png; path = Resources/shorten.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,6 @@
 		DA034887150B0F4D00168B58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DAA36643150B31CC002DFA0A /* icon.png */,
 				DAC08261150B265000D30F30 /* shorten.png */,
 				DA034888150B130D00168B58 /* seperator.png */,
 				DA034884150B0F3D00168B58 /* bg.png */,
@@ -71,6 +70,7 @@
 		DA9B7E43150A832F00831928 = {
 			isa = PBXGroup;
 			children = (
+				DA2FCB32150BC98B009617E2 /* icon.icns */,
 				DA9B7E58150A832F00831928 /* TimeConv */,
 				DA9B7E51150A832F00831928 /* Frameworks */,
 				DA9B7E4F150A832F00831928 /* Products */,
@@ -189,7 +189,7 @@
 				DA034885150B0F3D00168B58 /* bg.png in Resources */,
 				DA034889150B130D00168B58 /* seperator.png in Resources */,
 				DAC08262150B265000D30F30 /* shorten.png in Resources */,
-				DAA36644150B31CC002DFA0A /* icon.png in Resources */,
+				DA2FCB33150BC98B009617E2 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
