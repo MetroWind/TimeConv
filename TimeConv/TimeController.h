@@ -11,6 +11,10 @@
 @interface TimeController : NSObject
 
 - (void) setConverter: (id) converter;
-- (void) startUpdatingCurrentTime;
-- (void) stopUpdatingCurrentTime;
+- (void) setSrcView: (id) view srcZoneView: (id) view;
+- (void) setDestView: (id) view destZoneView: (id) view;
+
+- (void) shortSrcZone: (bool) shortp;
+- (void) shortDestZone: (bool) shortp;
+
 @end

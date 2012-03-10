@@ -9,10 +9,28 @@
 #import <Foundation/Foundation.h>
 
 @interface TimeConverter : NSObject
+@property (strong) NSDate* Time;
 
-- (void) setSrcToNowByTimer: (NSTimer*) timer;
-- (void) setSrcToNow;
-- (void) setSrcView: (id) view;
+- (void) setTimeToNowByTimer: (NSTimer*) timer;
+- (void) setTimeToNow;
+- (void) setSrcView: (id) view srcZoneView: (id) view;
+- (void) setDestView: (id) view destZoneView: (id) view;
 
-- (void) updateSrcView;
+- (void) genSrcZoneViewList: (bool) shortp;
+- (void) genDestZoneViewList: (bool) shortp;
+
+- (void) setSrcZoneWithZone: (NSTimeZone*) zone;
+- (void) setDestZoneWithZone: (NSTimeZone*) zone;
+- (bool) setSrcZoneWithStr: (NSString*) zone;
+- (bool) setDestZoneWithStr: (NSString*) zone;
+- (void) setSrcZoneToLocal;
+- (void) setDestZoneToLocal;
+
+- (void) updateTimeSrcView;
+- (void) updateTimeDestView;
+- (void) updateZoneSrcView;
+- (void) updateZoneDestView;
+
+- (void) updateViews;
+- (void) startUpdating;
 @end

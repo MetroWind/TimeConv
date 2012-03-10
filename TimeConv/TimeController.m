@@ -11,8 +11,12 @@
 
 @implementation TimeController
 {
-    NSTimer* SrcUpdateTimer;
     TimeConverter* TimeConv;
+    
+    id SrcTimeView;
+    id SrcZoneView;
+    id DestTimeView;
+    id DestZoneView;
 }
 - (id)init
 {
@@ -20,8 +24,21 @@
     if (self)
     {
         // Initialize self.
+        NSLog(@"Time controller initialized.");
     }
     return self;
+}
+
+- (void) setSrcView: (id) src_view srcZoneView: (id) src_zone_view
+{
+    SrcTimeView = src_view;
+    SrcZoneView = src_zone_view;
+}
+
+- (void) setDestView: (id) dest_view destZoneView: (id) dest_zone_view
+{
+    DestTimeView = dest_view;
+    DestZoneView = dest_zone_view;
 }
 
 - (void) setConverter: (id) converter
@@ -29,21 +46,42 @@
     TimeConv = converter;
 }
 
-- (void) startUpdatingCurrentTime
+- (void) shortSrcZone: (bool) shortp
 {
-    SrcUpdateTimer =
-    [NSTimer scheduledTimerWithTimeInterval: 0.5
-                                     target: TimeConv
-                                   selector: @selector(setSrcToNowByTimer:)
-                                   userInfo: [NSDictionary dictionaryWithObject:[NSDate date] forKey:@"StartDate"]
-                                    repeats: YES];
-    // [SrcUpdateTimer fire];
-    NSLog(@"Timer fired.");
+    [TimeConv genSrcZoneViewList: shortp];
 }
 
-- (void) stopUpdatingCurrentTime
+- (void) shortDestZone: (bool) shortp
 {
-    [SrcUpdateTimer invalidate];
+    [TimeConv genDestZoneViewList: shortp];
 }
+
+//-(void) controlTextDidChange: (NSNotification*) notice
+//{
+//    id WhoChanged = [notice object];
+//    bool Success;
+//    if([[WhoChanged identifier] compare: @"ZoneSrc"] == NSOrderedSame)
+//    {
+//        NSLog(@"Changing zone while typing...");
+//        Success = [TimeConv setSrcZoneWithStr:
+//                   [WhoChanged objectValueOfSelectedItem]];
+//    }
+//    else if([[WhoChanged identifier] compare: @"ZoneDest"] == NSOrderedSame)
+//    {
+//        NSLog(@"Changing zone while typing...");
+//        Success = [TimeConv setDestZoneWithStr:
+//                   [WhoChanged objectValueOfSelectedItem]];
+//    }
+//}
+//
+//- (BOOL) control: control textShouldBeginEditing:(NSNotification*) notice
+//{
+//    return YES;
+//}
+//
+//- (BOOL) control: control textShouldEndEditing: (NSNotification*) notice
+//{
+//    return FALSE;
+//}
 
 @end

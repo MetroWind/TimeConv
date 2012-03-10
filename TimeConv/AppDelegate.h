@@ -13,5 +13,14 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSDatePicker *SrcTimeView;
 @property (weak) IBOutlet NSComboBox *SrcTimeZoneView;
+@property (weak) IBOutlet NSButton *BtnSrcZoneShort;
+@property (weak) IBOutlet NSDatePicker *DestTimeView;
+@property (weak) IBOutlet NSComboBox *DestTimeZoneView;
+@property (weak) IBOutlet NSButton *BtnDestZoneShort;
+
+- (IBAction)onBtnSrcZoneShortClick:(id)sender;
+- (IBAction)onBtnDestZoneShortClick:(id)sender;
+- (IBAction)onZoneSrcChange:(id)sender;
+- (IBAction)onZoneDestChange:(id)sender;
 
 @end
