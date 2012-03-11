@@ -39,6 +39,10 @@
     [Seperator setImageScaling: NSScaleProportionally];
     [Seperator setImage: ImageSep];
         
+    NSTimeZone* LocalZone = [NSTimeZone localTimeZone];
+    [SrcTimeView setTimeZone: LocalZone];
+    [DestTimeView setTimeZone: LocalZone];
+    
     TimeControl = [[TimeController alloc] init];
     TimeConv = [[TimeConverter alloc] init];
     
@@ -50,9 +54,6 @@
     [self onBtnSrcZoneShortClick: self];
     [self onBtnDestZoneShortClick: self];
     
-    // Set default time zones
-    [TimeConv setSrcZoneToLocal];
-    [TimeConv setDestZoneToLocal];
     // [TimeConv setDestZoneViewWithZone: [NSTimeZone localTimeZone]];
 
     [SrcTimeZoneView setDelegate: TimeControl];
@@ -90,13 +91,14 @@
 
 - (IBAction)onZoneSrcChange:(id)sender
 {
+    NSLog(@"User is changing src zone...");
     [TimeConv setSrcZoneWithStr:
      [SrcTimeZoneView objectValueOfSelectedItem]];
 }
 
 - (IBAction)onZoneDestChange:(id)sender
 {
-    NSLog(@"Zone is changing to %@.", [DestTimeZoneView objectValueOfSelectedItem]);
+    NSLog(@"User is changing dest zone...");
     [TimeConv setDestZoneWithStr:
      [DestTimeZoneView objectValueOfSelectedItem]];
 }

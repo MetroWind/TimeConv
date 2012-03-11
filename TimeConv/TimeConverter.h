@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface TimeConverter : NSObject
-@property (strong) NSDate* Time;
+@property (strong) NSDate* TimeSrc;
+@property (strong) NSDate* TimeDest;
 
-- (void) setTimeToNowByTimer: (NSTimer*) timer;
-- (void) setTimeToNow;
 - (void) setSrcView: (id) view srcZoneView: (id) view;
 - (void) setDestView: (id) view destZoneView: (id) view;
 
@@ -32,4 +31,7 @@
 - (void) updateZoneDestView;
 
 - (void) updateViews;
+
+- (NSDate*) convertTime: (NSDate*) time fromZone: (NSTimeZone*) zone_src
+                 toZone: (NSTimeZone*) zone_dest;
 @end

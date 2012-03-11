@@ -110,11 +110,11 @@
 				DA9B7E64150A832F00831928 /* AppDelegate.h */,
 				DA9B7E65150A832F00831928 /* AppDelegate.m */,
 				DA9B7E67150A832F00831928 /* MainMenu.xib */,
-				DA9B7E59150A832F00831928 /* Supporting Files */,
 				DA9B7E72150A86FF00831928 /* TimeController.h */,
 				DA9B7E73150A86FF00831928 /* TimeController.m */,
 				DA9B7E75150A88DE00831928 /* TimeConverter.h */,
 				DA9B7E76150A88DE00831928 /* TimeConverter.m */,
+				DA9B7E59150A832F00831928 /* Supporting Files */,
 				DA034887150B0F4D00168B58 /* Resources */,
 			);
 			path = TimeConv;

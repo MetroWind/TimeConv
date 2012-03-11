@@ -6,6 +6,11 @@
 //  Copyright (c) 2012 Home. All rights reserved.
 //
 
+// NSDatePicker always interpret user keyboard input as local time,
+// therefore if its time zone is set to be non-local, what user types
+// is not what s/he sees.  Consequently, we have to set both date
+// pickers to local time.
+
 #import "TimeConverter.h"
 
 @implementation TimeConverter
@@ -28,9 +33,12 @@
     
     NSDate* LastTimeSrc;
     NSDate* LastTimeDest;
+    // For debug
+    NSDateFormatter* Formatter;
 }
 
-@synthesize Time;
+@synthesize TimeSrc;
+@synthesize TimeDest;
 
 - (id)init
 {
@@ -41,38 +49,33 @@
         ZoneNames = [NSTimeZone knownTimeZoneNames];
         ZoneNamesShort = [[NSTimeZone abbreviationDictionary] allKeys];  
         LocalZone = [NSTimeZone localTimeZone];
+        ZoneSrc = LocalZone;
+        ZoneDest = LocalZone;
         
-        Time = [NSDate date];
+        NSDate* Time = [NSDate date];
+        TimeSrc = Time;
+        TimeDest = Time;
+    
+        Formatter = [[NSDateFormatter alloc] init];
+        [Formatter setTimeZone: LocalZone];
+        [Formatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
         NSLog(@"Time converter initialized.");
     }
     return self;
 }
 
-- (void) setTimeToNowByTimer: (NSTimer*) timer
-{
-    NSLog(@"Timer %@ requests to update src time.", timer);
-    [self setTimeToNow];
-    [self updateTimeSrcView];
-}
-
-- (void) setTimeToNow
-{
-    Time = [NSDate date];
-}
-
-
 - (void) setSrcView: (id) src_view srcZoneView: (id) src_zone_view
 {
     SrcTimeView = src_view;
     SrcZoneView = src_zone_view;
-    [SrcTimeView setDateValue: Time];
+    [SrcTimeView setDateValue: TimeSrc];
 }
 
 - (void) setDestView: (id) dest_view destZoneView: (id) dest_zone_view
 {
     DestTimeView = dest_view;
     DestZoneView = dest_zone_view;
-    [DestTimeView setDateValue: Time];
+    [DestTimeView setDateValue: TimeDest];
 }
 
 - (void) genSrcZoneViewList: (bool) shortp
@@ -115,25 +118,44 @@
 
 - (void) setSrcZoneWithZone: (NSTimeZone*) zone
 {
+    NSLog(@"Setting src zone to %@...", zone);
+
+    NSTimeZone* OldZone = ZoneSrc;
     ZoneSrc = zone;
-    [SrcTimeView setTimeZone: ZoneSrc];
+    // [SrcTimeView setTimeZone: ZoneSrc];
+    TimeSrc = [self convertTime: TimeSrc fromZone: OldZone
+                         toZone:ZoneSrc];
+    NSLog(@"Src time changed to %@ because of zone change.",
+          [Formatter stringFromDate: TimeSrc]);
+    
+    [self updateTimeSrcView];
     [self updateZoneSrcView];
 }
 
 - (void) setDestZoneWithZone: (NSTimeZone*) zone
 {
+    NSLog(@"Setting dest zone to %@...", zone);
+
+    NSTimeZone* OldZone = ZoneDest;
     ZoneDest = zone;
-    [DestTimeView setTimeZone: ZoneDest];
+    // [DestTimeView setTimeZone: ZoneDest];
+    TimeDest = [self convertTime: TimeDest fromZone: OldZone
+                         toZone:ZoneDest];
+
+    NSLog(@"Dest time changed to %@ because of zone change.",
+          [Formatter stringFromDate: TimeDest]);
+
+    [self updateTimeDestView];
     [self updateZoneDestView];
 }
 
 - (bool) setSrcZoneWithStr: (NSString*) zone
 {
-    NSLog(@"Trying to set src zone to %@", zone);
+    NSLog(@"Trying to figure out what zone is %@...", zone);
 
     if(!zone)
     {
-        ZoneSrc = nil;
+        // ZoneSrc = nil;
         return false;
     }
     
@@ -143,7 +165,7 @@
         Zone = [NSTimeZone timeZoneWithName: zone];
         if(!Zone)
         {
-            ZoneSrc = nil;
+            // ZoneSrc = nil;
             return false;
         }
     }
@@ -154,11 +176,11 @@
 
 - (bool) setDestZoneWithStr: (NSString*) zone
 {
-    NSLog(@"Trying to set dest zone to %@", zone);
+    NSLog(@"Trying to figure out what zone is %@...", zone);
     
     if(!zone)
     {
-        ZoneDest = nil;
+        // ZoneDest = nil;
         return false;
     }
     NSTimeZone* Zone = [NSTimeZone timeZoneWithAbbreviation: zone];
@@ -167,7 +189,7 @@
         Zone = [NSTimeZone timeZoneWithName: zone];
         if(!Zone)
         {
-            ZoneDest = nil;
+            // ZoneDest = nil;
             return false;
         }
     }
@@ -188,12 +210,16 @@
 
 - (void) updateTimeSrcView
 {
-    [SrcTimeView setDateValue: Time];
+    NSLog(@"Syncing src view to %@...",
+          [Formatter stringFromDate: TimeSrc]);
+    [SrcTimeView setDateValue: TimeSrc];
 }
 
 - (void) updateTimeDestView
 {
-    [DestTimeView setDateValue: Time];
+    NSLog(@"Syncing dest view to %@...",
+          [Formatter stringFromDate: TimeDest]);
+    [DestTimeView setDateValue: TimeDest];
 }
 
 - (void) updateZoneSrcView
@@ -227,30 +253,58 @@
 
 - (void) updateViews
 {
-    NSDate* TimeSrc = [SrcTimeView dateValue];
-    NSDate* TimeDest = [DestTimeView dateValue];
-    if([TimeSrc isEqualToDate: TimeDest])
+    NSDate* TimeSrcNew = [SrcTimeView dateValue];
+    NSDate* TimeDestNew = [DestTimeView dateValue];
+        
+    if([TimeSrcNew isEqualToDate: TimeSrc])
     {
-        Time = TimeSrc;
-        NSLog(@"Time set according to both views.");
-        return;
+        if([TimeDestNew isEqualToDate: TimeDest])
+            return;
+        else
+        {
+            NSLog(@"Dest time changed to %@",
+                  [Formatter stringFromDate: TimeDestNew]);
+            TimeDest = TimeDestNew;
+            TimeSrc = [self convertTime: TimeDest
+                               fromZone: ZoneDest
+                                 toZone: ZoneSrc];
+        }
     }
-    
-    if([TimeSrc isEqualToDate: Time])
-    {// TimeDest changed
-        Time = TimeDest;
-        [self updateTimeSrcView];
-        NSLog(@"Time set according to dest time.");
-        return;
+    else
+    {
+        if([TimeDestNew isEqualToDate: TimeDest])
+        {
+            NSLog(@"Src time changed to %@",
+                  [Formatter stringFromDate: TimeSrcNew]);
+            TimeSrc = TimeSrcNew;
+            TimeDest = [self convertTime: TimeSrc
+                                fromZone: ZoneSrc 
+                                  toZone: ZoneDest];
+        }
     }
-    
-    if([TimeDest isEqualToDate: Time])
-    { // TimeSrc changed
-        Time = TimeSrc;
-        [self updateTimeDestView];
-        NSLog(@"Time set according to src time.");
-        return;
-    }
+
+//    if([TimeSrcNew isEqualToDate: TimeDestNew])
+//    {
+//        Time = TimeSrcNew;
+//        NSLog(@"Time set according to both views.");
+//        return;
+//    }
+//    
+//    if([TimeSrcNew isEqualToDate: Time])
+//    {// TimeDest changed
+//        Time = TimeDestNew;
+//        [self updateTimeSrcView];
+//        NSLog(@"Time set according to dest time.");
+//        return;
+//    }
+//    
+//    if([TimeDestNew isEqualToDate: Time])
+//    { // TimeSrc changed
+//        Time = TimeSrcNew;
+//        [self updateTimeDestView];
+//        NSLog(@"Time set according to src time.");
+//        return;
+//    }
     
     [self updateTimeSrcView];
     [self updateTimeDestView];
@@ -258,7 +312,30 @@
     return;
 }
 
-{
+- (NSDate*) convertTime: (NSDate*) time fromZone: (NSTimeZone*) zone_src
+                 toZone: (NSTimeZone*) zone_dest
+{ // `time' is actually interpreted as local time.
+    NSDateFormatter* FormatterWoZone = [[NSDateFormatter alloc] init];
+    // We need to get the numbers displayed in date picker
+    [FormatterWoZone setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
+    [FormatterWoZone setTimeZone: LocalZone];
+    
+    NSString* TimeStr = [FormatterWoZone stringFromDate: time];
+    NSLog(@"Converting %@ from %@ to %@...",
+          TimeStr, zone_src, zone_dest);
+    
+    // Now we'll see what the user actually means
+    [FormatterWoZone setTimeZone: zone_src];
+    NSDate* ProperTime = [FormatterWoZone dateFromString: TimeStr];
+    NSLog(@"... i.e. local time %@...", 
+          [Formatter stringFromDate: ProperTime]);
+
+    // What is the time string for this time in `zone_dest'?
+    [FormatterWoZone setTimeZone: zone_dest];
+    NSString* TimeStrDest = [FormatterWoZone stringFromDate: ProperTime];
+    // Acquire the corresponding NSDate (which points to the wrong time but with the same time string).
+    [FormatterWoZone setTimeZone: LocalZone];
+    return [FormatterWoZone dateFromString: TimeStrDest];
 }
 
 @end

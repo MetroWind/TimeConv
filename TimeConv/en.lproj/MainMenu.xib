@@ -1334,7 +1334,7 @@
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="430054726"/>
 								<double key="NSTimeInterval">0.0</double>
-								<int key="NSDatePickerElements">252</int>
+								<int key="NSDatePickerElements">236</int>
 								<object class="NSColor" key="NSBackgroundColor" id="827730175">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
@@ -1529,7 +1529,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="701298308"/>
 								<double key="NSTimeInterval">0.0</double>
-								<int key="NSDatePickerElements">252</int>
+								<int key="NSDatePickerElements">236</int>
 								<reference key="NSBackgroundColor" ref="827730175"/>
 								<reference key="NSTextColor" ref="368305583"/>
 							</object>
@@ -1622,7 +1622,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							<string key="NSFrame">{{444, 7}, {39, 38}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:1529</string>
 							<bool key="NSEnabled">YES</bool>
